@@ -1,5 +1,4 @@
 require 'chef_metal_fog'
 
-with_driver 'fog:AWS:default:us-west-2'
+with_driver 'fog:AWS'
 
-# using metal default key
