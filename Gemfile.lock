@@ -136,3 +136,4 @@ PLATFORMS
 DEPENDENCIES
   chef-metal
   chef-metal-vagrant
+  mixlib-shellout
