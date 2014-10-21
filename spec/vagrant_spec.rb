@@ -1,8 +1,6 @@
-require 'mixlib/shellout'
+require 'spec_helper'
 
 describe 'vagrant driver' do
-  STDOUT.sync = true
-  shellout_options = { :live_stream => STDOUT }
   context 'running chef zero' do
     it 'cycles through machine actions' do
       # to shell out or not to shell out (use client api)
