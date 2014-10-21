@@ -12,6 +12,7 @@ describe 'vagrant driver' do
     it 'hates you' do
       chef_client = Mixlib::ShellOut.new("chef-client -z cookbooks/chef-server-type/recipes/zero.rb cookbooks/chef-metal-driver/recipes/vagrant.rb cookbooks/chef-metal-test/recipes/boo.rb --force-formatter", shellout_options)
       chef_client.run_command
+      # need to catch the Chef client error
       expect(chef_client.error?).to be true
     end
   end
