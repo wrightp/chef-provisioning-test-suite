@@ -1,9 +1,23 @@
+GIT
+  remote: git://github.com/opscode/chef-metal-aws.git
+  revision: d336ca0ffef04d8dc85b6a27557cdd424a7b0b29
+  specs:
+    chef-metal-aws (0.1)
+      aws-sdk
+      chef
+      chef-metal (~> 0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
     akami (1.2.2)
       gyoku (>= 0.4.0)
       nokogiri
+    aws-sdk (1.56.0)
+      aws-sdk-v1 (= 1.56.0)
+    aws-sdk-v1 (1.56.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     builder (3.2.2)
     chef (11.16.4)
       chef-zero (~> 2.1, >= 2.1.4)
@@ -135,5 +149,6 @@ PLATFORMS
 
 DEPENDENCIES
   chef-metal
+  chef-metal-aws!
   chef-metal-vagrant
   mixlib-shellout

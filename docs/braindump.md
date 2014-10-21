@@ -10,6 +10,7 @@ remember:  cloud drivers cost money!
  * rackspace
  * digitalocean
  * openstack
+ 
 ### vm and container drivers
 * docker
 * vagrant

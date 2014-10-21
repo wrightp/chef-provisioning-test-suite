@@ -8,5 +8,7 @@ chef-client -z spec/cookbooks/chef-server-type/recipes/zero.rb spec/cookbooks/ch
 ```
 
 ```
-rspec spec/initial_spec.rb
+rspec spec/vagrant_spec.rb
+
+rspec spec/fog_spec.rb
 ```
