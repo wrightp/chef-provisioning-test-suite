@@ -10,7 +10,7 @@ module ChefMetalTestSuite
 
     default :metal_driver, :vagrant
 
-    default :test_recipes, ['base']
+    default :test_recipes, []
 
     def validate
       #server_type.include? [:zero, :server, :hosted]

@@ -29,6 +29,7 @@ module ChefMetalTestSuite
 
     def run(argv=ARGV)
       parse_options(argv)
+      ChefMetalTestSuite::Config.test_recipes = cli_arguments if cli_arguments
       ChefMetalTestSuite::Config.merge!(config)
     end
   end
