@@ -9,3 +9,5 @@ gem 'chef-metal-fog', :github => 'opscode/chef-metal-fog'
 # gem 'chef-metal-aws', :github => 'opscode/chef-metal-aws'
 
 gem 'mixlib-shellout'
+gem 'mixlib-config'
+gem 'mixlib-cli'
