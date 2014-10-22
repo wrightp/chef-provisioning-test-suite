@@ -6,7 +6,11 @@ I don't like the name either.  Throw ideas my way.
 This project is intended to execute all the components that make up the chef-metal ecosystem, and validate they behave as expected.  This includes all the "opscode" chef-metal drivers via chef-zero, Chef Server clusters, or Hosted Chef.  Other facets include OS platorm/versions, including Windows, and cross-platform interaction.
 
 ## What does it prove?
-This project aims to prove cluster idempotence, and interchangeability between providers and recipes.  Other goals include ensuring key features of chef-metal work as intended e.g., parallel machine creation/convergence, and image creation /loading.
+### Now
+Currently, this project proves that chef-metal and some drivers (master branches) can be combined with basic recipes and executed without raising critical errors.  The project is growing rapidly. Ideas and plans can be reviewed [here](docs/braindump.md)
+
+### Goals
+This project aims to prove cluster idempotence, and interchangeability between providers and recipes.  Other goals include ensuring key features of chef-metal work as intended e.g., parallel machine creation/convergence, and image creation/loading.
 
 ## Concept
 chef-metal recipes in this project are small bits of work separted into categories:
@@ -30,3 +34,8 @@ rspec spec/vagrant_spec.rb
 
 rspec spec/fog_spec.rb
 ```
+
+## Staying on Track
+To give this test project a great chance of succees, we've decided to align our goals with Brett Pettichord's ["Seven Step to Test Automation Success"](http://www.testpoint.com.au/attachments/093_Seven%20Steps%20to%20Test%20Automation%20Success.pdf).
+
+Follow our [progress](docs/pettichords_seven_steps.md)
