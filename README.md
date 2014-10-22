@@ -17,7 +17,7 @@ chef-metal recipes in this project are small bits of work separted into categori
 
 Here's an example how tests can be formulated by combining recipes in a certain order.
 ```
-bundle exec chef-client -z cookbooks/chef-server-type/recipes/zero.rb cookbooks/chef-metal-driver/recipes/vagrant.rb cookbooks/chef-metal-test/recipes/cycle-actions.rb
+bundle exec chef-client -z -o chef-metal-driver::vagrant, chef-metal-test::cycle-actions
 ```
 
 The tests are pre-configured combinations that will eventually be more dynamic.  Tests will also be easily configured to allow filtering of what tests should be run for a given execution.
