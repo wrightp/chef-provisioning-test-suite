@@ -70,3 +70,7 @@ what is hanlon?
 * Maybe each test can just create nodes of each OS (when applicable)
 * Tests will be run with rspec
 * Collect existing examples from doc and tests to create the smoke test recipes
+
+## Leankit
+https://chef.leankit.com/Boards/View/114320599/135372206
+
