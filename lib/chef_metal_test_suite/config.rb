@@ -10,9 +10,9 @@ module ChefMetalTestSuite
 
     default :metal_driver, :vagrant
 
-    default :os_platform, :ubuntu
+    default :platform, :ubuntu
 
-    default :os_version, '14.04'
+    default :platform_version, '14.04'
 
     default :test_recipes, []
 

@@ -18,16 +18,16 @@ module ChefMetalTestSuite
       :description => 'Chef Metal Driver',
       :proc => Proc.new { |d| d.to_sym }
 
-    option :os_platform,
-      :short => '-p OS PLATFORM',
-      :long => '--plaftorm OS PLATFORM',
+    option :platform,
+      :short => '-p PLATFORM',
+      :long => '--plaftorm PLATFORM',
       :default => :ubuntu,
-      :description => 'Operating System',
+      :description => 'Operating System Plaftorm',
       :proc => Proc.new { |p| p.to_sym }
 
-    option :os_version,
-      :short => '-v OS VERSION',
-      :long => '--version OS VERSION',
+    option :platform_version,
+      :short => '-pv PLATFORM VERSION',
+      :long => '--platform-version PLATFORM VERSION',
       :default => '14.04',
       :description => 'Operating System Plaftorm Version',
 
