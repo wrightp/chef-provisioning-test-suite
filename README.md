@@ -26,3 +26,8 @@ rspec spec/vagrant_spec.rb
 
 rspec spec/fog_spec.rb
 ```
+
+## Development
+```
+bundle install --binstubs
+```

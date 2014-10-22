@@ -18,6 +18,19 @@ module ChefMetalTestSuite
       :description => 'Chef Metal Driver',
       :proc => Proc.new { |d| d.to_sym }
 
+    option :os_platform,
+      :short => '-p OS PLATFORM',
+      :long => '--plaftorm OS PLATFORM',
+      :default => :ubuntu,
+      :description => 'Operating System',
+      :proc => Proc.new { |p| p.to_sym }
+
+    option :os_version,
+      :short => '-v OS VERSION',
+      :long => '--version OS VERSION',
+      :default => '14.04',
+      :description => 'Operating System Plaftorm Version',
+
     option :help,
       :short => "-h",
       :long => "--help",
@@ -31,6 +44,7 @@ module ChefMetalTestSuite
       parse_options(argv)
       ChefMetalTestSuite::Config.test_recipes = cli_arguments if cli_arguments
       ChefMetalTestSuite::Config.merge!(config)
+      #ChefMetalTestSuite::Config.validate
     end
   end
 end

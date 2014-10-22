@@ -10,10 +10,29 @@ module ChefMetalTestSuite
 
     default :metal_driver, :vagrant
 
+    default :os_platform, :ubuntu
+
+    default :os_version, '14.04'
+
     default :test_recipes, []
 
     def validate
-      #server_type.include? [:zero, :server, :hosted]
+      # server_type
+      [:zero, :server, :hosted]
+
+      # driver
+      [:vagrant, :fog]
+
+      # os platform / version
+      {
+        :ubuntu => ['10.04', '12.04', '14.04'],
+        :centos => ['5', '6', '7'],
+        :windows => []
+      }
+    end
+
+    def save
+      # to data bag
     end
   end
 end
