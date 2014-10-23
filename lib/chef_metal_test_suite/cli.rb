@@ -29,7 +29,7 @@ module ChefMetalTestSuite
       :short => '-pv PLATFORM VERSION',
       :long => '--platform-version PLATFORM VERSION',
       :default => '14.04',
-      :description => 'Operating System Plaftorm Version',
+      :description => 'Operating System Plaftorm Version'
 
     option :help,
       :short => "-h",
@@ -42,7 +42,7 @@ module ChefMetalTestSuite
 
     def run(argv=ARGV)
       parse_options(argv)
-      ChefMetalTestSuite::Config.test_recipes = cli_arguments if cli_arguments
+      ChefMetalTestSuite::Config.test_recipes = cli_arguments
       ChefMetalTestSuite::Config.merge!(config)
       #ChefMetalTestSuite::Config.validate
     end
