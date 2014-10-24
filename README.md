@@ -23,7 +23,7 @@ Here's an example how tests can be formulated by combining recipes in a certain 
 ```
 bundle install --binstubs # first things
 
-bundle exec chef-client -z -o chef-metal-driver::vagrant, chef-metal-test::cycle-actions
+bundle exec chef-client -z -o chef-metal-driver::vagrant,chef-metal-test::cycle-actions
 ```
 "Hey! That looks just like chef-metal proper!"  And, you would be correct. "So, what gives?"  Well, we are executing standard approaches to running chef-metal and validating that they execute without error.  This work leads to ability to run chef-metal convergence and verify the results with tests.
 

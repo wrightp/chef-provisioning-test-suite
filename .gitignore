@@ -37,3 +37,4 @@ Gemfile.lock
 ## chef-metal
 /nodes/
 /clients/
+/data_bags/
