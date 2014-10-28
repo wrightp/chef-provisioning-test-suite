@@ -9,7 +9,7 @@ How has testing been executing up to this point?
 ### Define Requirements
 [Working document](docs/braindump.md)
 #### Near-term Goals
-Focus: RC 1 (AWS Reinvent)
+##### Focus: RC 1 (AWS Reinvent)
 * chef-zero local only
 * ubuntu 14.04
 * windows 2012
@@ -18,7 +18,7 @@ Focus: RC 1 (AWS Reinvent)
 * create, verify, destroy test
 * std out error scanner
 
-Focus: Release 1.0
+#####Focus: Release 1.0
 * hosted and chef server
 * all "opscode" drivers
 * all platforms
