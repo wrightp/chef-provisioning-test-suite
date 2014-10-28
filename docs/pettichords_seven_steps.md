@@ -9,17 +9,19 @@ How has testing been executing up to this point?
 ### Define Requirements
 [Working document](docs/braindump.md)
 #### Near-term Goals
-Focus: AWS Reinvent
-* chef-zero
-* aws driver
-* fog driver against aws
-* unix
-* smoke tests
+Focus: RC 1 (AWS Reinvent)
+* chef-zero local only
+* ubuntu 14.04
+* windows 2012
+* aws driver and vagrant driver are highest priority
+* add in as many "opscode" drivers following
+* create, verify, destroy test
+* std out error scanner
 
 Focus: Release 1.0
 * hosted and chef server
 * all "opscode" drivers
-* windows
+* all platforms
 * more tests to cover core driver features
 
 #### Long-term Goals
