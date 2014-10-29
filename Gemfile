@@ -9,3 +9,6 @@ gem 'chef-metal-aws', :github => 'opscode/chef-metal-aws'
 gem 'mixlib-shellout'
 gem 'mixlib-config'
 gem 'mixlib-cli'
+
+gem 'rspec_junit_formatter'
+gem 'rspec-instafail'

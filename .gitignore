@@ -39,3 +39,5 @@ Gemfile.lock
 /clients/
 /data_bags/
 /.chef/
+
+/results/

@@ -1,0 +1,9 @@
+--out results/rspec.out
+
+--format RspecJunitFormatter
+--out results/rspec.xml
+
+--require rspec/instafail
+--format RSpec::Instafail
+
+--color
