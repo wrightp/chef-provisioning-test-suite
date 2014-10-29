@@ -18,7 +18,7 @@ How has testing been executing up to this point?
 * create, verify, destroy test
 * std out error scanner
 
-#####Focus: Release 1.0
+##### Focus: Release 1.0
 * hosted and chef server
 * all "opscode" drivers
 * all platforms
