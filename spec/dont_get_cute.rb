@@ -1,14 +1,24 @@
 require 'spec_helper'
 
 describe 'dont get cute' do
+  before(:all) do
+    seek_and_destroy
+  end
+
   context 'local chef zero' do
 
     %w( aws fog-aws vagrant ).each { |driver|
       it driver do
-        chef_client = Mixlib::ShellOut.new("bundle exec chef-client -z -o dont-get-cute::#{driver} --force-formatter", shellout_options)
-        chef_client.run_command
-        expect(chef_client.error?).to be false
+        results = metal_run("dont-get-cute::#{driver}")
+        expect(results.error?).to be false
+      end
+
+      it 'removed node and client data' do
       end
     }
+  end
+
+  after(:all) do
+    seek_and_destroy
   end
 end
