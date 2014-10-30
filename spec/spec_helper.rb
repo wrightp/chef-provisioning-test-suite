@@ -2,6 +2,7 @@ $: << '../lib'
 
 require 'mixlib/shellout'
 
+# this will all be moved to classes...
 def metal_run(run_list)
   chef_client = Mixlib::ShellOut.new("bundle exec chef-client -z -o #{run_list} --force-formatter", shellout_options)
   chef_client.run_command
@@ -9,7 +10,7 @@ def metal_run(run_list)
 end
 
 def seek_and_destroy
-  metal_run("dont-get-cute::destroy_all")
+  metal_run("simplify::destroy_all")
 end
 
 private
