@@ -1,8 +1,9 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gem 'chef-metal', '~> 0.14.2'
+gem 'chef-provisioning', :github => 'opscode/chef-provisioning'
 
+gem 'chef-metal'
 gem 'chef-metal-vagrant', :github => 'opscode/chef-metal-vagrant'
 gem 'chef-metal-fog', :github => 'opscode/chef-metal-fog'
 gem 'chef-metal-aws', :github => 'opscode/chef-metal-aws'

@@ -16,7 +16,7 @@ How has testing been executing up to this point?
 * aws driver and vagrant driver are highest priority
 * add in as many "opscode" drivers following
 * create, verify, destroy test
-* std out error scanner
+* CI for cloud
 
 ##### Focus: Release 1.0
 * hosted and chef server
