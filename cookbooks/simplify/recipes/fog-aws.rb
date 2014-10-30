@@ -16,4 +16,4 @@ machine machine_name do
   action :destroy
 end
 
-raise 'expected node list to by empty' unless search(:node, "name:#{machine_name}").empty?
+raise 'expected node list to be empty' unless search(:node, "name:#{machine_name}").empty?
