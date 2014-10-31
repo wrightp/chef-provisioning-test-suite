@@ -7,7 +7,8 @@ gem 'chef-metal-vagrant', :github => 'opscode/chef-metal-vagrant'
 gem 'chef-metal-fog', :github => 'opscode/chef-metal-fog'
 gem 'chef-metal-aws', :github => 'opscode/chef-metal-aws'
 gem 'chef-metal-docker', :github => 'opscode/chef-metal-docker'
-#gem 'chef-metal-lxc', :github => 'opscode/chef-metal-lxc' https://github.com/opscode/chef-metal-lxc/issues/5
+
+gem 'chef-metal-lxc', :github => 'opscode/chef-metal-lxc' if RUBY_PLATFORM.downcase.include?("linux")
 
 gem 'mixlib-shellout'
 gem 'mixlib-config'
