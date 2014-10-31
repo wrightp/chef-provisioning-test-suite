@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe 'Cloud Drivers', :cloud do
+describe 'Local Mode', :local => true do # will change to :mode => :local or something similar
   before(:all) do
     seek_and_destroy
   end
 
-  context 'Local Mode' do
+  context 'Cloud Drivers', :cloud do
     %w( aws fog-aws ).each { |driver|
       it driver do
         results = metal_run("simplify::#{driver}")
@@ -14,23 +14,7 @@ describe 'Cloud Drivers', :cloud do
     }
   end
 
-after(:each) do |example|
-  if example.exception
-    FileUtils::cp('.chef/local-mode-cache/cache/chef-stacktrace.out', "results/#{example.full_description}-chef-stacktrace.out")
-  end
-end
-
-  after(:all) do
-    seek_and_destroy
-  end
-end
-
-describe 'VM Drivers', :vm do
-  before(:all) do
-    seek_and_destroy
-  end
-
-  context 'Local Mode' do
+  context 'VM Drivers', :vm do
     %w( vagrant ).each { |driver|
       it driver do
         results = metal_run("simplify::#{driver}")
@@ -39,24 +23,7 @@ describe 'VM Drivers', :vm do
     }
   end
 
-after(:each) do |example|
-  if example.exception
-    FileUtils::cp('.chef/local-mode-cache/cache/chef-stacktrace.out', "results/#{example.full_description}-chef-stacktrace.out")
-  end
-end
-
-  after(:all) do
-    seek_and_destroy
-  end
-end
-
-
-describe 'Container Drivers', :container do
-  before(:all) do
-    seek_and_destroy
-  end
-
-  context 'Local Mode' do
+  context 'Container Drivers', :container do
     %w( docker ).each { |driver|
       it driver do
         results = metal_run("simplify::#{driver}")
@@ -65,11 +32,11 @@ describe 'Container Drivers', :container do
     }
   end
 
-after(:each) do |example|
-  if example.exception
-    FileUtils::cp('.chef/local-mode-cache/cache/chef-stacktrace.out', "results/#{example.full_description}-chef-stacktrace.out")
+  after(:each) do |example|
+    if example.exception
+      FileUtils::cp('.chef/local-mode-cache/cache/chef-stacktrace.out', "results/#{example.full_description}-chef-stacktrace.out")
+    end
   end
-end
 
   after(:all) do
     seek_and_destroy
