@@ -30,7 +30,7 @@ bundle exec chef-client -z -o chef-metal-driver::vagrant,chef-metal-test::cycle-
 ## The Tests
 The tests are pre-configured combinations that will eventually be more dynamic.  Tests will also be easily configured to allow filtering (cli or config api) of what tests should be run for a given execution.
 ```bash
-rspec spec/simplify.rb
+rspec spec/simplify.rb --tag cloud # or vm. just until this all gets wrapped into the config
 ```
 
 ## Staying on Track
