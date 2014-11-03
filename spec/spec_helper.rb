@@ -13,6 +13,11 @@ def seek_and_destroy
   metal_run("simplify::destroy_all")
 end
 
+def remove_chef_repo
+  chef_client = Mixlib::ShellOut.new("rm -rf .chef/chef-repo", shellout_options)
+  chef_client.run_command
+end
+
 private
 
 # will move

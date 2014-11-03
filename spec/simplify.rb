@@ -3,6 +3,7 @@ require 'spec_helper'
 describe 'Local Mode', :local => true do # will change to :mode => :local or something similar
   before(:all) do
     seek_and_destroy
+    remove_chef_repo
   end
 
   context 'Cloud Drivers', :cloud do
