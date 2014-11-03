@@ -1,4 +1,4 @@
-require 'chef_metal_vagrant'
+require 'chef/provisioning/vagrant_driver/driver'
 
 with_driver 'vagrant'
 

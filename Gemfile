@@ -3,8 +3,8 @@ source "https://rubygems.org"
 
 gem 'chef-provisioning', :github => 'opscode/chef-provisioning'
 
-gem 'chef-metal-vagrant', :github => 'opscode/chef-metal-vagrant'
-gem 'chef-metal-fog', :github => 'opscode/chef-metal-fog'
+gem 'chef-provisioning-vagrant', :github => 'opscode/chef-provisioning-vagrant'
+gem 'chef-provisioning-fog', :github => 'opscode/chef-provisioning-fog'
 gem 'chef-metal-aws', :github => 'opscode/chef-metal-aws'
 gem 'chef-metal-docker', :github => 'opscode/chef-metal-docker'
 
