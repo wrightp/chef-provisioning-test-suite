@@ -34,7 +34,7 @@ describe 'Local Mode', :local => true do # will change to :mode => :local or som
 
   after(:each) do |example|
     if example.exception
-      FileUtils::cp('.chef/local-mode-cache/cache/chef-stacktrace.out', "results/#{example.full_description}-chef-stacktrace.out")
+      FileUtils::cp('.chef/local-mode-cache/cache/chef-stacktrace.out', ".chef/test-results/#{example.full_description}-chef-stacktrace.out")
     end
   end
 
