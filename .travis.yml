@@ -1,3 +1,7 @@
+branches:
+  only:
+    - master
+
 language: ruby
 rvm:
   - rvm: 1.9.3
@@ -6,4 +10,10 @@ rvm:
 
 bundler_args: --binstubs
 
-script: rspec spec/simplify.rb --tag cloud
+script: rspec spec/application/cli_spec.rb
+
+notifications:
+  hipchat:
+    rooms:
+      # QA
+      - secure: "nbHfaQ6zvyb6up+Yc4ZZxrCRXGvo+cmTjZXMs+kVZubODHkWT+Q/+g2Qz4JkIhlnT3uFui4FamlqL3xSg9COa8xSwUgTsWxC2p0PMq15Kv6Ia37gtROteXyFMq3PtjRxnKBx6AG/97lj2HXzwVJPozE0wvFxswReepR+shU5RYA="

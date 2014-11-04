@@ -14,7 +14,7 @@ def seek_and_destroy
 end
 
 def clean
-  chef_client = Mixlib::ShellOut.new("rm -rf .chef/chef-repo;rm -rf .chef/test-results", shellout_options)
+  chef_client = Mixlib::ShellOut.new("rm -rf .chef/chef-repo;rm -rf .chef/test-results;mkdir -p .chef/test-results", shellout_options)
   chef_client.run_command
 end
 
