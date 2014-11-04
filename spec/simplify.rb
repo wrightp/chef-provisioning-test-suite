@@ -3,11 +3,11 @@ require 'spec_helper'
 describe 'Local Mode', :local => true do # will change to :mode => :local or something similar
   before(:all) do
     seek_and_destroy
-    remove_chef_repo
+    clean
   end
 
   context 'Cloud Drivers', :cloud do
-    %w( aws aws-win fog-aws ).each { |driver|
+    %w( aws fog-aws-win fog-aws ).each { |driver|
       it driver do
         results = metal_run("simplify::#{driver}")
         expect(results.error?).to be false

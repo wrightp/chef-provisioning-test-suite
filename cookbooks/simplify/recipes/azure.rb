@@ -1,4 +1,4 @@
-require 'chef_metal_azure'
+require 'chef/provisioning/azure_driver/driver'
 
 with_driver 'azure'
 

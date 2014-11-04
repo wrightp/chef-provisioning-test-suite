@@ -1,4 +1,4 @@
-require 'chef_metal_aws'
+require 'chef/provisioning/fog_driver/driver'
 
 with_driver 'aws'
 

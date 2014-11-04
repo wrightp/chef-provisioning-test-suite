@@ -1,8 +1,8 @@
-require 'chef_metal_aws'
+require 'chef/provisioning/fog_driver/driver'
 
-with_driver 'aws'
+with_driver 'fog:AWS'
 
-machine_name = 'aws-driver-win'
+machine_name = 'fog-aws-driver-win'
 
 with_data_center 'us-west-2' do
   machine machine_name do
