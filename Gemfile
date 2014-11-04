@@ -9,7 +9,7 @@ gem 'chef-provisioning-aws', :github => 'opscode/chef-provisioning-aws'
 gem 'chef-metal-docker', :github => 'opscode/chef-metal-docker'
 gem 'chef-provisioning-azure', :github => 'opscode/chef-provisioning-azure'
 
-gem 'chef-provisioning-lxc', :github => 'opscode/chef-provisioning-lxc' if RUBY_PLATFORM.downcase.include?("linux")
+gem 'chef-metal-lxc', :github => 'opscode/chef-metal-lxc' if RUBY_PLATFORM.downcase.include?("linux")
 
 gem 'mixlib-shellout'
 gem 'mixlib-config'
