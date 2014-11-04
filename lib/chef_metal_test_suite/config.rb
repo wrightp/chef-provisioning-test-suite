@@ -21,13 +21,13 @@ module ChefMetalTestSuite
       [:zero, :server, :hosted]
 
       # driver
-      [:vagrant, :fog]
+      [:vagrant, :fog, :aws]
 
       # os platform / version
       {
         :ubuntu => ['10.04', '12.04', '14.04'],
         :centos => ['5', '6', '7'],
-        :windows => []
+        :windows => ['2012']
       }
     end
 
