@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/patrick-wright/chef-provisioning-test-suite.png?label=ready&title=Ready)](https://waffle.io/patrick-wright/chef-provisioning-test-suite)
 chef-provisioning-test-suite
 =====================
 I don't like the name either.  Throw ideas my way.
