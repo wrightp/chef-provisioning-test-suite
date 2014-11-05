@@ -10,7 +10,7 @@ bundler_args: --binstubs
 
 script:
   # unit
-  - rspec spec/application/cli_spec.rb
+  - rspec spec/application
   # test suite
   - rspec spec/simplify.rb --tag cloud
 
