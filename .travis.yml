@@ -8,10 +8,19 @@ rvm:
 
 bundler_args: --binstubs
 
-script: rspec spec/application/cli_spec.rb
+script:
+  # unit
+  - rspec spec/application/cli_spec.rb
+  # test suite
+  - rspec spec/simplify.rb --tag cloud
 
-notifications:
-  hipchat:
-    rooms:
-      # QA
-      - secure: "nbHfaQ6zvyb6up+Yc4ZZxrCRXGvo+cmTjZXMs+kVZubODHkWT+Q/+g2Qz4JkIhlnT3uFui4FamlqL3xSg9COa8xSwUgTsWxC2p0PMq15Kv6Ia37gtROteXyFMq3PtjRxnKBx6AG/97lj2HXzwVJPozE0wvFxswReepR+shU5RYA="
+env:
+  global:
+    - secure: "Rd758t1Ecu5nO0vY3juB2Z/Q4t4s9CvyXpRbPqITYvc3na4jWb+PqvLrfHlQ/2LHiOfpMIjeBJXXWCycXfM+vuFLtH3kCVDxH2lBloLL/UJYjZXrYQcieMXD+cOwjcFRis8JyDanLX5nBQVvToMT4NnIFCwvuMlQDb8+DNbYA/s="
+    - secure: "qQi5HtX625kr0IPQcBgIG55jXDOyZNsjwefswDGvyfGsdOkwMAu6Mc24A9yBM5udQlzCOzIjn2AO/whUzWMMUzHt3Y0AalRBZlvrawAfkwHKr/UYz7yvzgJU5CZ1bRwU1+sjynazmdXbuQ2N2b0loLIYkvkIgvGIRTkcUbyvLYg="
+
+# notifications:
+#   hipchat:
+#     rooms:
+#       # QA
+#       - secure: "nbHfaQ6zvyb6up+Yc4ZZxrCRXGvo+cmTjZXMs+kVZubODHkWT+Q/+g2Qz4JkIhlnT3uFui4FamlqL3xSg9COa8xSwUgTsWxC2p0PMq15Kv6Ia37gtROteXyFMq3PtjRxnKBx6AG/97lj2HXzwVJPozE0wvFxswReepR+shU5RYA="

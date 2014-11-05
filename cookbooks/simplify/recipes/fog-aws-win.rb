@@ -4,6 +4,7 @@ with_driver 'fog:AWS'
 
 machine_name = 'fog-aws-driver-win'
 
+# broken!
 with_data_center 'us-west-2' do
   machine machine_name do
     machine_options :bootstrap_options => {
