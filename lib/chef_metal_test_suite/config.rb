@@ -16,23 +16,36 @@ module ChefMetalTestSuite
 
     default :test_recipes, []
 
-    def validate
-      # server_type
-      [:zero, :server, :hosted]
-
-      # driver
-      [:vagrant, :fog, :aws]
-
-      # os platform / version
-      {
+    def self.validate
+      errors = []
+      supported_servers = [:zero] #[:zero, :server, :hosted]
+      supported_drivers = [:vagrant, :fog, :aws]
+      supported_platforms =  {
         :ubuntu => ['10.04', '12.04', '14.04'],
         :centos => ['5', '6', '7'],
         :windows => ['2012']
       }
+
+      # server_type
+      errors << "#{server_type} not supported. Must be one of #{supported_servers}" unless supported_servers.include?(server_type)
+
+      # driver
+      errors << "#{metal_driver} not supported. Must be one of #{supported_drivers}" unless supported_drivers.include?(metal_driver)
+
+      # os platform
+      errors << "#{platform} not supported. Must be one of #{supported_platforms}" unless supported_platforms.has_key?(platform)
+
+      # os version
+      if supported_platforms.has_key?(platform)
+        errors << "#{platform_version} not supported for #{platform}. Must be one of #{supported_platforms[platform]}" unless supported_platforms[platform].include?(platform_version)
+      end
+
+      return errors
     end
 
-    def save
+    def self.save
       # to data bag
     end
+
   end
 end

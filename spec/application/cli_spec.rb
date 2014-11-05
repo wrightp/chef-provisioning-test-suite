@@ -28,5 +28,4 @@ describe ChefMetalTestSuite::Cli do
       expect(ChefMetalTestSuite::Config.test_recipes).to eq(['test1', 'test2'])
     end
   end
-
 end
