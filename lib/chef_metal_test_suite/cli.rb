@@ -44,7 +44,7 @@ module ChefMetalTestSuite
       parse_options(argv)
       ChefMetalTestSuite::Config.test_recipes = cli_arguments
       ChefMetalTestSuite::Config.merge!(config)
-      #ChefMetalTestSuite::Config.validate
+      ChefMetalTestSuite::Config.validate(true)
     end
   end
 end

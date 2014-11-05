@@ -28,4 +28,11 @@ describe ChefMetalTestSuite::Cli do
       expect(ChefMetalTestSuite::Config.test_recipes).to eq(['test1', 'test2'])
     end
   end
+
+  context "invalid args" do
+    it "raises exception" do
+      expect { raise cli.run(['-d', 'mycloud']) }.to raise_error(ArgumentError, /mycloud/)
+    end
+  end
+
 end

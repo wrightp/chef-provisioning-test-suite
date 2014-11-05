@@ -16,7 +16,8 @@ module ChefMetalTestSuite
 
     default :test_recipes, []
 
-    def self.validate
+    def self.validate(raise_error = false)
+      # future reference https://github.com/opscode/chef/blob/master/lib/chef/mixin/params_validate.rb
       errors = []
       supported_servers = [:zero] #[:zero, :server, :hosted]
       supported_drivers = [:vagrant, :fog, :aws]
@@ -27,17 +28,21 @@ module ChefMetalTestSuite
       }
 
       # server_type
-      errors << "#{server_type} not supported. Must be one of #{supported_servers}" unless supported_servers.include?(server_type)
+      errors << "#{server_type} server type not supported. Must be one of #{supported_servers}" unless supported_servers.include?(server_type)
 
       # driver
-      errors << "#{metal_driver} not supported. Must be one of #{supported_drivers}" unless supported_drivers.include?(metal_driver)
+      errors << "#{metal_driver} driver not supported. Must be one of #{supported_drivers}" unless supported_drivers.include?(metal_driver)
 
       # os platform
-      errors << "#{platform} not supported. Must be one of #{supported_platforms}" unless supported_platforms.has_key?(platform)
+      errors << "#{platform} plaform not supported. Must be one of #{supported_platforms}" unless supported_platforms.has_key?(platform)
 
       # os version
       if supported_platforms.has_key?(platform)
-        errors << "#{platform_version} not supported for #{platform}. Must be one of #{supported_platforms[platform]}" unless supported_platforms[platform].include?(platform_version)
+        errors << "#{platform_version} platform version not supported for #{platform}. Must be one of #{supported_platforms[platform]}" unless supported_platforms[platform].include?(platform_version)
+      end
+
+      if raise_error and !errors.empty?
+        raise ArgumentError, "There are errors in your configuration:\n#{errors.join("\n")}"
       end
 
       return errors
