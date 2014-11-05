@@ -4,7 +4,7 @@ with_driver 'fog:AWS'
 
 machine_name = 'fog-aws-driver-win'
 
-# broken!
+# broken... timeouts.
 with_data_center 'us-west-2' do
   machine machine_name do
     machine_options :bootstrap_options => {
@@ -15,6 +15,7 @@ with_data_center 'us-west-2' do
     #files '/hello' => { :content => 'world' }
   end
 
+  ## what's the winrm equiv to these tests?
   # machine_execute "test `cat /hello` = 'world'" do
   #   machine machine_name
   # end

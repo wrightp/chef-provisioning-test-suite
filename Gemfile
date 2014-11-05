@@ -8,8 +8,9 @@ gem 'chef-provisioning-fog', :github => 'opscode/chef-provisioning-fog'
 gem 'chef-provisioning-aws', :github => 'opscode/chef-provisioning-aws'
 gem 'chef-provisioning-azure', :github => 'opscode/chef-provisioning-azure'
 
-#gem 'chef-metal-docker', :github => 'opscode/chef-metal-docker'
-#gem 'chef-metal-lxc', :github => 'opscode/chef-metal-lxc' if RUBY_PLATFORM.downcase.include?("linux")
+#gem 'chef-provisioning-docker', :github => 'opscode/chef-provisioning-docker'
+#gem 'chef-provisioning-lxc', :github => 'opscode/chef-provisioning-lxc' if RUBY_PLATFORM.downcase.include?("linux")
+#gem 'chef-provisioning-hanlon', :github => 'opscode/chef-provisioning-hanlon'
 
 gem 'chef', '~> 11.16'
 
