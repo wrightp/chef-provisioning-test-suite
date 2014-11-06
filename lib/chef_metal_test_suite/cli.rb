@@ -31,6 +31,13 @@ module ChefMetalTestSuite
       :default => '14.04',
       :description => 'Operating System Plaftorm Version'
 
+    option :create_databag,
+      :short => '-b',
+      :long => '--create-databag',
+      :default => true,
+      :boolean => true,
+      :description => 'Writes the configuration to a local databag'
+
     option :help,
       :short => "-h",
       :long => "--help",
@@ -45,6 +52,24 @@ module ChefMetalTestSuite
       ChefMetalTestSuite::Config.test_recipes = cli_arguments
       ChefMetalTestSuite::Config.merge!(config)
       ChefMetalTestSuite::Config.validate(true)
+
+      # This is ugly.  I've tried configuring Chef programmatically, but 
+      # I still run into the issue of needing the config paths.  This
+      # works with considerably less code.
+      if config[:create_databag]
+        require 'tempfile'
+        require 'json'
+        file = Tempfile.new(['test-config', '.json'])
+        hash_config = ChefMetalTestSuite::Config.save(true)
+        hash_config['id'] = 'test'
+        file.write(hash_config.to_json)
+        file.close
+
+        knife = Mixlib::ShellOut.new("bundle exec knife data bag create config",  { :live_stream => STDOUT })
+        knife.run_command
+        knife = Mixlib::ShellOut.new("bundle exec knife data bag from file config #{file.path}",  { :live_stream => STDOUT })
+        knife.run_command
+      end
     end
   end
 end

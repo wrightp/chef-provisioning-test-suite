@@ -1,5 +1,4 @@
 require 'mixlib/config'
-# require 'chef'
 
 module ChefMetalTestSuite
   module Config
@@ -43,15 +42,10 @@ module ChefMetalTestSuite
       end
 
       if raise_error and !errors.empty?
-        raise ArgumentError, "There are errors in your configuration:\n#{errors.join("\n")}"
+        raise ArgumentError, "There are configuration errors:\n#{errors.join("\n")}"
       end
 
       return errors
     end
-
-    def self.save
-
-    end
-
   end
 end
