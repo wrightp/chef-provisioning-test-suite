@@ -1,4 +1,5 @@
 require 'mixlib/config'
+# require 'chef'
 
 module ChefMetalTestSuite
   module Config
@@ -49,7 +50,7 @@ module ChefMetalTestSuite
     end
 
     def self.save
-      # to data bag
+
     end
 
   end

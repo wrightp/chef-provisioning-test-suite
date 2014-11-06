@@ -8,14 +8,13 @@ machine_name = 'fog-aws-driver-win'
 with_data_center 'us-west-2' do
   machine machine_name do
     machine_options :bootstrap_options => {
-      :key_name => 'metal_default',
       :image_id => 'ami-21f0bc11',
       :instance_type => 't1.micro'
     }
     #files '/hello' => { :content => 'world' }
   end
 
-  ## what's the winrm equiv to these tests?
+  ## what's the win equiv to these tests?
   # machine_execute "test `cat /hello` = 'world'" do
   #   machine machine_name
   # end

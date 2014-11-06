@@ -7,7 +7,8 @@ describe 'Local Mode', :local => true do # will change to :mode => :local or som
   end
 
   context 'Cloud Drivers', :cloud do
-    %w( aws fog-aws-win fog-aws ).each { |driver|
+    # aws last, open issue where keys are not generated
+    %w( fog-aws fog-aws-win aws ).each { |driver|
       it driver do
         results = metal_run("simplify::#{driver}")
         expect(results.error?).to be false

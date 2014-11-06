@@ -6,12 +6,12 @@ machine_name = 'aws-driver'
 
 machine machine_name do
   machine_options :bootstrap_options => {
-    :key_name => 'metal_default'
+    :key_name => 'chef_default'
   }
   files '/hello' => { :content => 'world' }
 end
 
-## this will fail because connect_to_machine is not implmented ^^
+# ## this will fail because connect_to_machine is not implmented ^^
 machine_execute "test `cat /hello` = 'world'" do
   machine machine_name
 end
