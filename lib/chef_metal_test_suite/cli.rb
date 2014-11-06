@@ -34,7 +34,6 @@ module ChefMetalTestSuite
     option :create_databag,
       :short => '-b',
       :long => '--create-databag',
-      :default => true,
       :boolean => true,
       :description => 'Writes the configuration to a local databag'
 
