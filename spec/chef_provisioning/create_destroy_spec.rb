@@ -11,7 +11,6 @@ def test(driver, recipe = driver, name = recipe)
 end
 
 describe 'Create and Destroy' do
-  let(:test) { CreateDestroyTest.new }
   context 'Cloud Drivers', :driver_family => 'cloud' do
     test('fog', 'fog-aws')
     test('fog', 'fog-aws-windows')
