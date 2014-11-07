@@ -20,3 +20,5 @@ gem 'mixlib-cli'
 
 gem 'rspec_junit_formatter'
 gem 'rspec-instafail'
+
+gem 'yard'

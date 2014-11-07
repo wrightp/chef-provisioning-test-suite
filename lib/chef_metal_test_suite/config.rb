@@ -1,6 +1,7 @@
 require 'mixlib/config'
 
 module ChefMetalTestSuite
+  # Nothing to see here
   module Config
     extend Mixlib::Config
 

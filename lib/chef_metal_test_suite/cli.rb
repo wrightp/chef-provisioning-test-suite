@@ -1,6 +1,7 @@
 require 'mixlib/cli'
 
 module ChefMetalTestSuite
+  # Nothing to see here
   class Cli
     include Mixlib::CLI
 

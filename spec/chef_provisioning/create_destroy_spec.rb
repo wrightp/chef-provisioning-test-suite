@@ -1,6 +1,9 @@
 require 'chef_provisioning_spec_helper'
 
-# :driver, driver recipe name, example name
+# Create and Destroy test
+# @param driver [Symbol]
+# @param recipe [String] Override driver recipe name if different from driver name
+# @param name [String] Override test exmaple name if different from recipe name
 def test(driver, recipe = driver, name = recipe)
   it name, :driver => driver do
     expect(metal_run("driver::#{recipe},test::create-destroy").error?).to be false
@@ -8,6 +11,7 @@ def test(driver, recipe = driver, name = recipe)
 end
 
 describe 'Create and Destroy' do
+  let(:test) { CreateDestroyTest.new }
   context 'Cloud Drivers', :driver_family => 'cloud' do
     test('fog', 'fog-aws')
     test('fog', 'fog-aws-windows')
