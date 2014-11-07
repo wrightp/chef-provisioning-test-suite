@@ -1,6 +1,7 @@
 require 'chef_provisioning_spec_helper'
 
-def test(driver, name = driver, recipe = name)
+# :driver, driver recipe name, example name
+def test(driver, recipe = driver, name = recipe)
   it name, :driver => driver do
     expect(metal_run("driver::#{recipe},test::create-destroy").error?).to be false
   end
