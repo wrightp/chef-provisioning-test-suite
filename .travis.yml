@@ -9,10 +9,7 @@ rvm:
 bundler_args: --binstubs
 
 script:
-  # unit
-  - rspec spec/application
-  # test suite
-  - rspec spec/simplify.rb -t driver_family:cloud
+  - rspec spec -t driver_family:cloud
 
 env:
   global:

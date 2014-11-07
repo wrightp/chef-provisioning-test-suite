@@ -10,7 +10,7 @@ def metal_run(run_list)
 end
 
 def seek_and_destroy
-  metal_run("simplify::destroy_all")
+  metal_run("utility::destroy_all")
 end
 
 def clean
