@@ -2,6 +2,7 @@ require 'mixlib/config'
 
 module ChefMetalTestSuite
   # Nothing to see here
+  # See long explanation in the cli.rb file.
   module Config
     extend Mixlib::Config
 

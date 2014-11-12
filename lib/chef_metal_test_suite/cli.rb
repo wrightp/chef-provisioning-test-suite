@@ -1,7 +1,19 @@
 require 'mixlib/cli'
 
 module ChefMetalTestSuite
-  # Nothing to see here
+  # This class, along with the config class,
+  # where originially intended to create an API
+  # based approach for configuring the tests
+  # then executing accordingly.  (whether api or cli)
+  # rspec tagging and custom settings turned out to
+  # be a more elegent solution, and validation
+  # of what can run in combination is handled in the
+  # spec files directly.
+
+  # Perhaps this work can be refactored to create a
+  # a config model and cli for running Rspec, but
+  # mostly likely won't be necessary, and the
+  # classes can be removed from the project.
   class Cli
     include Mixlib::CLI
 
@@ -52,23 +64,6 @@ module ChefMetalTestSuite
       ChefMetalTestSuite::Config.test_recipes = cli_arguments
       ChefMetalTestSuite::Config.merge!(config)
       ChefMetalTestSuite::Config.validate(true)
-
-      # This is ugly.  I've tried configuring Chef programmatically, but 
-      # I still run into the issue of needing the config paths.  This
-      # works with considerably less code.
-      if config[:create_databag]
-        require 'tempfile'
-        require 'json'
-        file = Tempfile.new(['test-config', '.json'])
-        hash_config = ChefMetalTestSuite::Config.save(true)
-        hash_config['id'] = 'test'
-        file.write(hash_config.to_json)
-        file.close
-
-        knife = Mixlib::ShellOut.new("bundle exec knife data bag create config",  { :live_stream => STDOUT })
-        knife.run_command
-        knife = Mixlib::ShellOut.new("bundle exec knife data bag from file config #{file.path}",  { :live_stream => STDOUT })
-        knife.run_command
       end
     end
   end

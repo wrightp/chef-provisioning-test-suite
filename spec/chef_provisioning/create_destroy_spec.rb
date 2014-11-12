@@ -1,7 +1,7 @@
 require 'chef_provisioning_spec_helper'
 
 # Create and Destroy test
-# @param driver [Symbol]
+# @param driver [String] Driver name
 # @param recipe [String] Override driver recipe name if different from driver name
 # @param name [String] Override test exmaple name if different from recipe name
 def test(driver, recipe = driver, name = recipe)
