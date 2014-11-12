@@ -22,3 +22,4 @@ gem 'rspec_junit_formatter'
 gem 'rspec-instafail'
 
 gem 'yard'
+gem 'retryable', '~> 1.3.6'
