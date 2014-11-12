@@ -29,7 +29,8 @@ task :aws_terminate do
   # select the instances ids and verify AWS only returned instances
   # with the correct tag name
   ids = []
-  ids = resp[:tag_set].collect { |t| t[:resource_id] if t[:key] == TAG_NAME }
+  ids = resp[:tag_set].collect{ |t| t[:resource_id] if t[:key] == TAG_NAME }
+  ids.compact! # remove nil values
 
   abort("AWS tag set size mismatch
     AWS: #{resp[:tag_set]}
@@ -58,7 +59,7 @@ task :aws_terminate do
   end
 
   puts "Attemping to terminate running and stopped instances with tag '#{TAG_NAME}'."
-  ids.each { |i| puts i + "\n" }
+  puts ids.join("\n")
 
   resp = ec2.client.terminate_instances(options = { :instance_ids => ids, :dry_run => DRY_RUN })
 
