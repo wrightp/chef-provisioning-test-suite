@@ -2,7 +2,7 @@ Dir.glob('lib/tasks/*.rake').each { |r| import r }
 
 desc "[Default] Force bundling from master"
 task :bundle do
-  sh('rm Gemfile.lock && bundle install --binstubs')
+  sh('rm -f Gemfile.lock && bundle install --binstubs')
 end
 task :default => :bundle
 
@@ -19,4 +19,9 @@ end
 desc "Start default yard server"
 task :yard_server do
   sh('bundle exec yard server')
+end
+
+desc "Clean up chef-repo and test-results"
+task :clean do
+  sh('rm -rf ./chef-repo ./test-results')
 end

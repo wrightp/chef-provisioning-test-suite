@@ -9,7 +9,6 @@ require 'spec_helper'
 RSpec.configure do |config|
   config.before(:all) do
     seek_and_destroy
-    clean_up_artifacts
   end
   
   config.after(:each) do |example|
@@ -33,12 +32,6 @@ end
 # Use greedy node search to delete all machines
 def seek_and_destroy
   metal_run("utility::destroy_all")
-end
-
-# Delete chef-repo and test results
-def clean_up_artifacts
-  chef_client = Mixlib::ShellOut.new("rm -rf ./chef-repo/*;rm -rf ./test-results/*", shellout_options)
-  chef_client.run_command
 end
 
 private
