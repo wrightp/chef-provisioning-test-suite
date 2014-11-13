@@ -25,3 +25,8 @@ desc "Clean up chef-repo and test-results"
 task :clean do
   sh('rm -rf ./chef-repo ./test-results')
 end
+
+desc "Berks vendor and friends"
+task :berks do
+  sh('rm -rf Berksfile.lock berks-cookbooks; bundle exec berks vendor')
+end
