@@ -21,10 +21,10 @@ RSpec.configure do |config|
   end
 end
 
-# Simplify chef-provisioning client run
+# Simplify chef-provisioning client run.
 # @param run_list [String] run list to execute
-def metal_run(run_list)
-  chef_client = Mixlib::ShellOut.new("bundle exec chef-client -z -o #{run_list} --force-formatter", shellout_options)
+def metal_run(run_list, local_mode = true)
+  chef_client = Mixlib::ShellOut.new("bundle exec chef-client #{'-z' if local_mode} -o #{run_list} --force-formatter", shellout_options)
   chef_client.run_command
   return chef_client
 end
