@@ -1,10 +1,16 @@
 Dir.glob('lib/tasks/*.rake').each { |r| import r }
 
-desc "[Default] Force bundling from master"
+desc "Print help message"
+task :help do
+  puts "Run 'rake bundle' and 'rake berks' to setup your project"
+  puts "Run 'rspec spec -t driver_family:cloud' to run specs. See docs for more options."
+end
+task :default => :help
+
+desc "Force bundling from master"
 task :bundle do
   sh('rm -f Gemfile.lock && bundle install --binstubs')
 end
-task :default => :bundle
 
 desc "Run utlity destroy all machines recipe with chef-provisioning"
 task :destroy_all do
