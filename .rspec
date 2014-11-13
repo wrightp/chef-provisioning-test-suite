@@ -1,7 +1,7 @@
---out .chef/test-results/rspec.out
+--out test-results/rspec.out
 
 --format RspecJunitFormatter
---out .chef/test-results/rspec.xml
+--out test-results/rspec.xml
 
 --require rspec/instafail
 --format RSpec::Instafail

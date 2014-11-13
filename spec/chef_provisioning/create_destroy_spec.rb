@@ -6,7 +6,7 @@ require 'chef_provisioning_spec_helper'
 # @param name [String] Override test exmaple name if different from recipe name
 def test(driver, recipe = driver, name = recipe)
   it name, :driver => driver do
-    expect(metal_run("driver::#{recipe},test::create-destroy").error?).to be false
+    expect(metal_run("server-type::zero,driver::#{recipe},test::create-destroy").error?).to be false
   end
 end
 

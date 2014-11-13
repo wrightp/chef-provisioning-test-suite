@@ -11,7 +11,7 @@ Here's an example how tests can be formulated by combining recipes in a certain 
 rake # runs `bundle install --binstubs`
 
 # manual example
-bundle exec chef-client -z -o driver::vagrant,test::create-destroy
+bundle exec chef-client -z -o server-type::zero,driver::vagrant,test::create-destroy
 
 # rspec goodies: cleanup, log capture, formatting
 rspec spec -t driver_family:cloud # run all cloud driver tests
@@ -25,8 +25,6 @@ The tests are pre-configured combinations that will eventually be more dynamic. 
 `driver_family` : cloud, vm, container
 
 `driver` : aws, fog, vagrant
-
-`windows` : boolean `-t ~windows` will exclude windows tests
 
 Future tags : platform / version, chef server type (hosted, cluster)
 

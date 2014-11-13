@@ -23,3 +23,4 @@ gem 'rspec-instafail'
 
 gem 'yard'
 gem 'retryable', '~> 1.3.6'
+gem 'berkshelf', '~> 3.2.0'

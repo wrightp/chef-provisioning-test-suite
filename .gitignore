@@ -19,6 +19,9 @@ build/
 /_yardoc/
 /doc/
 /rdoc/
+/test-results/
+/chef-repo/
+/nodes/
 
 ## Environment normalisation:
 /.bundle/
@@ -34,5 +37,6 @@ Gemfile.lock
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
-## chef-provisioning
+Berksfile.lock
+
 /.chef/

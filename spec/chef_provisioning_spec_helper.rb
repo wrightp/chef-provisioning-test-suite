@@ -14,7 +14,7 @@ RSpec.configure do |config|
   
   config.after(:each) do |example|
     FileUtils::cp('.chef/local-mode-cache/cache/chef-stacktrace.out', 
-      ".chef/test-results/#{example.full_description}-chef-stacktrace.out") if example.exception
+      "./test-results/#{example.full_description}-chef-stacktrace.out") if example.exception
   end
 
   config.after(:all) do
@@ -37,7 +37,7 @@ end
 
 # Delete chef-repo and test results
 def clean_up_artifacts
-  chef_client = Mixlib::ShellOut.new("rm -rf .chef/chef-repo;rm -rf .chef/test-results;mkdir -p .chef/test-results", shellout_options)
+  chef_client = Mixlib::ShellOut.new("rm -rf ./chef-repo/*;rm -rf ./test-results/*", shellout_options)
   chef_client.run_command
 end
 
