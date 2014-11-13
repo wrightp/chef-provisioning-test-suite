@@ -22,6 +22,7 @@ build/
 /test-results/
 /chef-repo/
 /nodes/
+/clients/
 
 ## Environment normalisation:
 /.bundle/
