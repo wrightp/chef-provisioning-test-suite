@@ -8,10 +8,10 @@ I don't like the name either.  Throw ideas my way.
 ## Usage
 Here's an example how tests can be formulated by combining recipes in a certain order.
 ```
-rake # runs `bundle install --binstubs`
+rake bundle && rake berks
 
 # manual example
-bundle exec chef-client -z -o server-type::zero,driver::vagrant,test::create-destroy
+bundle exec chef-client -z -o driver::vagrant,test::create-destroy
 
 # rspec goodies: cleanup, log capture, formatting
 rspec spec -t driver_family:cloud # run all cloud driver tests
